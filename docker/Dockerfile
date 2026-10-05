@@ -15,8 +15,15 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 EXPOSE 22
 
-RUN useradd -ms /bin/bash dev
+RUN useradd -ms /bin/bash dev \
+  && mkdir -p /var/run/sshd /home/dev/.ssh \
+  && chmod 700 /home/dev/.ssh \
+  && chown -R dev:dev /home/dev/.ssh
+
 RUN echo 'dev:dev' | chpasswd
+
+RUN mkdir -p /app/CryptoHPC \
+  && chown -R dev:dev /app
 
 ########################################################
 # Add custom packages and development environment here
