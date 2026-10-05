@@ -1,0 +1,14 @@
+services:
+  CryptoHPC:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    image: cpp_develop
+    security_opt:
+      - seccomp:unconfined
+    container_name: cpp-develop
+    ports:
+      - "2222:22"
+      - "56420:56420"
+    working_dir: /app
+    hostname: cpp-develop
