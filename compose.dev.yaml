@@ -12,3 +12,12 @@ services:
       - "56420:56420"
     working_dir: /app
     hostname: cpp-develop
+    volumes:
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/dri:/dev/dri:ro
+    environment:
+     - DISPLAY=${DISPLAY}
+     - XAUTHORITY=${XAUTHORITY}
+     - NVIDIA_VISIBLE_DEVICES=all
+     - NVIDIA_DRIVER_CAPABILITIES=compute,utility

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="default-width">450</property>
+    <property name="default-height">250</property>
+    <property name="child">
+      <object class="GtkNotebook" id="mainNotebook">
+        <property name="focusable">1</property>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="child">
+              <object class="GtkCenterBox" id="EDVerticalBox">
+                <property name="orientation">vertical</property>
+                <property name="start-widget">
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkBox" id="EDHorizzontalBoxAddKey">
+                        <property name="spacing">15</property>
+                        <property name="homogeneous">1</property>
+                        <property name="baseline-position">top</property>
+                        <child>
+                          <object class="GtkLabel" id="AddKeyLabel">
+                            <property name="label" translatable="1">Add a private key</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="AddKeyButton">
+                            <property name="label">Add Key</property>
+                            <property name="focusable">1</property>
+                            <property name="receives-default">1</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparator"/>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="EDHorizzontalBoxEncryptionMethod">
+                        <property name="spacing">15</property>
+                        <property name="homogeneous">1</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label" translatable="1">Select Encryption Method</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="EncryptionMethodSelection">
+                            <property name="active">0</property>
+                            <property name="active-id">0</property>
+                            <items>
+                              <item id="0" translatable="yes">RSA</item>
+                              <item id="1" translatable="yes">XOR</item>
+                            </items>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparator"/>
+                    </child>
+                  </object>
+                </property>
+                <property name="end-widget">
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkPaned" id="EDHorizzontalPane">
+                        <property name="resize-start-child">0</property>
+                        <property name="vexpand">1</property>
+                        <property name="focusable">1</property>
+                        <property name="wide-handle">1</property>
+                        <property name="start-child">
+                          <object class="GtkBox" id="EncryptBox">
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkTextView" id="EncryptText">
+                                <property name="vexpand">1</property>
+                                <property name="focusable">1</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="EncryptButton">
+                                <property name="label" translatable="1">Encrypt</property>
+                                <property name="focusable">1</property>
+                                <property name="receives-default">1</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                        <property name="end-child">
+                          <object class="GtkBox" id="DecryptBox">
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkTextView" id="DecryptText">
+                                <property name="vexpand">1</property>
+                                <property name="focusable">1</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="DecryptButton">
+                                <property name="label" translatable="1">Decrypt</property>
+                                <property name="focusable">1</property>
+                                <property name="receives-default">1</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="1">Encrypt &amp; Decrypt</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="position">1</property>
+            <property name="child">
+              <object class="GtkBox" id="RSAGenBox">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox" id="BitLenghtBox">
+                    <property name="homogeneous">1</property>
+                    <child>
+                      <object class="GtkLabel" id="BitLenghtLabel">
+                        <property name="label" translatable="1">Select bit Lenght:</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="BitLengthButton512">
+                        <property name="label" translatable="1">512 bits</property>
+                        <property name="focusable">1</property>
+                        <property name="group">BitLengthButton1024</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="BitLengthButton1024">
+                        <property name="label" translatable="1">1024 bits</property>
+                        <property name="focusable">1</property>
+                        <property name="active">1</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="BitLengthButton2048">
+                        <property name="label" translatable="1">2048 bits</property>
+                        <property name="focusable">1</property>
+                        <property name="group">BitLengthButton1024</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="BitLengthButton4096">
+                        <property name="label" translatable="1">4096 bits</property>
+                        <property name="focusable">1</property>
+                        <property name="group">BitLengthButton1024</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="SaveRSAKeyButton">
+                    <property name="vexpand">1</property>
+                    <property name="label" translatable="1">Create and Save</property>
+                    <property name="focusable">1</property>
+                    <property name="receives-default">1</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="1">Create RSA Key</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkNotebookPage">
+            <property name="position">2</property>
+            <property name="child">
+              <object class="GtkBox" id="DHBox">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox" id="DHIPBox">
+                    <property name="spacing">15</property>
+                    <property name="homogeneous">1</property>
+                    <child>
+                      <object class="GtkLabel" id="DHIPLabel">
+                        <property name="label" translatable="1">Add Other Client IP</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="OtherClientIPText">
+                        <property name="focusable">1</property>
+                        <property name="placeholder-text" translatable="1">IP like: 127:0:0:1</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="SaveDHKeyButton">
+                    <property name="vexpand">1</property>
+                    <property name="label" translatable="1">Share and Save</property>
+                    <property name="focusable">1</property>
+                    <property name="receives-default">1</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <property name="tab">
+              <object class="GtkLabel">
+                <property name="label" translatable="1">Share DH Key</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+  <object class="GtkFileChooserNative" id="NativeFileChooser"/>
+</interface>

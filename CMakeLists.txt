@@ -16,4 +16,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${dir}/bin")
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CryptoHPC src/main.cpp)
+find_package(PkgConfig)
+
+pkg_check_modules(GTKMM gtkmm-4.0)
+
+add_subdirectory(src/gui)
+
+# add_executable(CryptoHPC src/main.cpp)

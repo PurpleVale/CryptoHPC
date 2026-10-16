@@ -51,6 +51,19 @@ RUN apt-get update \
       openmpi-bin \
       libboost-all-dev \
       libfmt-dev \
+      libgl1-mesa-dev \
+      libgtk-4-1 \
+      libgtk-4-dev \
+      gtk-4-examples \
+      glibmm-2.68 \
+      cairomm-1.16 \
+      pangomm-2.48 \
+      pkg-config \
+      glib-2.0  \
+      gdk-pixbuf-2.0 \
+      graphene-1.0  \
+      libgtkmm-4.0-dev \
+      x11-apps \
   && apt-get clean
 ########################################################
 
