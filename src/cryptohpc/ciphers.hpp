@@ -1,14 +1,29 @@
 #ifndef CRYPTOHPC_CIPHERS_H
 #define CRYPTOHPC_CIPHERS_H
 
+#include <cryptohpc/cryptohpc.hpp>
+#include <type_traits>
 
-template<int b> class Cipher {
-};
+namespace CryptoHPC {
 
-template<int b> class XOR : public Cipher<b> {
-};
+  template <CipherType Type,int bits> class Cipher {
+  };
 
-template<int b> class RSA : public Cipher<b> {
-};
+  template <int bits> class Cipher<XOR,bits> {
+    assert_allowed_size(bits)
+  public:
+    static void encrypt() {}
+    static void decrypt() {}
+  };
+
+  template <int bits> class Cipher<RSA,bits> {
+    assert_allowed_size(bits)
+   public:
+    static void encrypt() {}
+    static void decrypt() {}
+  };
+
+}
+
 
 #endif //CRYPTOHPC_CIPHERS_H
