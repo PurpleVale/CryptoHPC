@@ -2,7 +2,7 @@
 #define CRYPTOHPC_CRYPTOBIT_H
 
 
-template<int b> class cryptoint {
+template<int b> class CryptoInt {
 };
 
 #endif //CRYPTOHPC_CRYPTOBIT_H
