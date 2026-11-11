@@ -5,7 +5,11 @@ include_directories(
         ${GTKMM_INCLUDE_DIRS}  )
 
 add_executable(gui_test
-        gui.cpp)
+        gui.cpp
+        ../cryptohpc/cryptoint.hpp
+        ../cryptohpc/keymanagers.hpp
+        ../cryptohpc/ciphers.hpp
+)
 
 target_link_libraries(gui_test
         ${GTKMM_LIBRARIES}  )
