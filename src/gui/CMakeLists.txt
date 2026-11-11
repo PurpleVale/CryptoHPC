@@ -6,9 +6,6 @@ include_directories(
 
 add_executable(gui_test
         gui.cpp
-        ../cryptohpc/cryptoint.hpp
-        ../cryptohpc/keymanagers.hpp
-        ../cryptohpc/ciphers.hpp
 )
 
 target_link_libraries(gui_test
